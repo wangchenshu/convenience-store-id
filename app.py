@@ -10,6 +10,10 @@ from bs4 import BeautifulSoup
 # import concurrent.futures
 import asyncio
 
+def check_dir(dir_name):
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+
 def save_store_data(data):
     save_dir = data['save_dir']
     city = data['city']
@@ -64,6 +68,9 @@ citys = [
     "連江縣",
     "南海諸島"
 ]
+
+## 建立資料夾
+check_dir(dir_711)
 
 ## 7-11
 ## 同步版本
